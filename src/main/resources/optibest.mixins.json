@@ -35,9 +35,10 @@
     "MixinRamPurge",
     "MixinFastModels",
     "MixinNoWeatherLag",
-    "MixinChunkUnload"
+    "MixinChunkUnload",
+    "MixinFastData",
+    "MixinNoSpawnLag",
+    "MixinNoBackgroundTasks"
   ],
-  "injectors": {
-    "defaultRequire": 1
-  }
+  "injectors": { "defaultRequire": 1 }
 }
