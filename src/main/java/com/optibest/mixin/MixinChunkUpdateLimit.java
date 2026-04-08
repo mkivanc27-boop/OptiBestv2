@@ -8,9 +8,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(WorldRenderer.class)
 public class MixinChunkUpdateLimit {
-    @Inject(method = "isTerrainRenderQueued", at = @At("HEAD"), cancellable = true)
+    // 1.21.4'te terrain render kuyruğu kontrolünü bu şekilde yakalıyoruz
+    @Inject(method = "isTerrainRenderQueued", at = @At("HEAD"), cancellable = true, remap = false)
     private void limitUpdates(CallbackInfoReturnable<Boolean> cir) {
         cir.setReturnValue(false);
     }
 }
-
