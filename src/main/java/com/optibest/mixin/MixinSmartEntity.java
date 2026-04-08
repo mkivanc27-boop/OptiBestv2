@@ -13,9 +13,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class MixinSmartEntity<T extends Entity> {
     @Inject(method = "shouldRender", at = @At("HEAD"), cancellable = true)
     private void aggressiveCulling(T entity, Frustum frustum, double x, double y, double z, CallbackInfoReturnable<Boolean> cir) {
-        if (entity.getPos().getSquaredDistance(MinecraftClient.getInstance().player.getPos()) > 1024) {
+        MinecraftClient client = MinecraftClient.getInstance();
+        if (client.player != null && entity.getPos().squaredDistanceTo(client.player.getPos()) > 1024) {
             cir.setReturnValue(false);
         }
     }
 }
-
