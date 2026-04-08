@@ -23,7 +23,10 @@
     "MixinFastMath",
     "MixinSkyPerformance",
     "MixinAutoOptimizer",
-    "MixinFastFluids"
+    "MixinFastFluids",
+    "MixinMemoryLeakFix",
+    "MixinModelDiyet",
+    "MixinTextureDiyet"
   ],
   "injectors": { "defaultRequire": 1 }
 }
