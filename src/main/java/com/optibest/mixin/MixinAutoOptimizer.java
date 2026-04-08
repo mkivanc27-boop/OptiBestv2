@@ -14,14 +14,11 @@ public class MixinAutoOptimizer {
     private void forceBestSettings(CallbackInfo ci) {
         GameOptions options = (GameOptions) (Object) this;
 
-        // FPS Canavarı Ayarlar
-        options.getCloudRenderMode().setValue(CloudRenderMode.OFF); // Bulutlar Kapatıldı
-        options.getSmoothLighting().setValue(false); // Yumuşak Işıklandırma Kapatıldı
-        options.getParticles().setValue(ParticlesMode.MINIMAL); // Parçacıklar En Azda
-        options.getAo().setValue(0); // Ambient Occlusion Kapatıldı
-        options.getViewDistance().setValue(2); // Görüş Mesafesi 2 Chunk (En Hızlı)
-        options.getEntityDistanceScaling().setValue(0.5f); // Varlık Görünme Mesafesi %50
-        options.getMipmapLevels().setValue(0); // Mipmap Kapatıldı (Büyük FPS kazancı)
+        options.getCloudRenderMode().setValue(CloudRenderMode.OFF);
+        options.getParticles().setValue(ParticlesMode.MINIMAL);
+        options.getAo().setValue(false); // 1.21.4'te boolean oldu
+        options.getViewDistance().setValue(2);
+        options.getEntityDistanceScaling().setValue(0.5); // Double istiyordu, düzelttim
+        options.getMipmapLevels().setValue(0);
     }
 }
-
