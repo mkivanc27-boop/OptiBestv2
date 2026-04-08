@@ -1,4 +1,4 @@
-name: OptiBest Build
+name: mbest700-OptiBest-Build
 on: [push, pull_request]
 
 jobs:
@@ -17,15 +17,12 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
 
-      - name: Make Gradle Executable
-        run: chmod +x gradlew
-
       - name: Build JAR
         run: ./gradlew build
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: OptiBest-JAR
+          name: OptiBest-mbest700-JAR
           path: build/libs/*.jar
           
