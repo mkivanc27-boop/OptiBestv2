@@ -38,7 +38,11 @@
     "MixinChunkUnload",
     "MixinFastData",
     "MixinNoSpawnLag",
-    "MixinNoBackgroundTasks"
+    "MixinNoBackgroundTasks",
+    "MixinFastNetworking",
+    "MixinNoSignLag",
+    "MixinPlayerCulling",
+    "MixinFastHandshake"
   ],
   "injectors": { "defaultRequire": 1 }
 }
