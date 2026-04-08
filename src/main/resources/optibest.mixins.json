@@ -20,7 +20,6 @@
     "MixinFrustum",
     "MixinFastMath",
     "MixinSkyPerformance",
-    "MixinAutoOptimizer",
     "MixinFastFluids",
     "MixinMemoryLeakFix",
     "MixinTextureDiyet",
@@ -31,7 +30,6 @@
     "MixinUltraCulling",
     "MixinNoLightLag",
     "MixinFastTick",
-    "MixinUltraParticles",
     "MixinRamPurge",
     "MixinFastModels",
     "MixinNoWeatherLag",
@@ -41,12 +39,10 @@
     "MixinNoBackgroundTasks",
     "MixinFastNetworking",
     "MixinNoSignLag",
-    "MixinPlayerCulling",
     "MixinFastHandshake",
-    "MixinFastFaces",
-    "MixinFastChunkRebuild",
-    "MixinFastVertex",
     "MixinFastMathAdvanced"
   ],
-  "injectors": { "defaultRequire": 1 }
+  "injectors": {
+    "defaultRequire": 1
+  }
 }
