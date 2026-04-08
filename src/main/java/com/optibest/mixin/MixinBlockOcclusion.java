@@ -12,6 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class MixinBlockOcclusion {
     @Inject(method = "shouldSideBeRendered", at = @At("HEAD"), cancellable = true)
     private static void onShouldSideBeRendered(BlockState state, BlockState adjacentState, Direction side, CallbackInfoReturnable<Boolean> cir) {
+        // Aynı tip bloklar yan yanaysa görünmeyen iç yüzeyleri renderlamayı iptal eder
         if (state == adjacentState) {
             cir.setReturnValue(false);
         }
