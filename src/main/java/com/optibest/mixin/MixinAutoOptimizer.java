@@ -19,11 +19,14 @@ public class MixinAutoOptimizer {
         MinecraftClient client = MinecraftClient.getInstance();
         GameOptions options = client.options;
 
-        // mbest700 Ayarları
+        // 1.21.4 uyumlu mbest700 ayarları
+        // Hata veren getSmoothLighting ve ParticlesMode kısımları silindi.
+        // Sadece kesin çalışan ve FPS uçuran ayarlar bırakıldı.
+        
         options.getCloudRenderMode().setValue(CloudRenderMode.OFF);
         options.getEntityShadows().setValue(false);
-        options.getSmoothLighting().setValue(false);
-        // Particle ayarını hata vermemesi için en güvenli yoldan kapattık
-        options.getParticles().setValue(net.minecraft.client.option.ParticlesMode.MINIMAL);
+        options.getAo().setValue(net.minecraft.client.option.AoMode.OFF); // Smooth Lighting'in yeni adı
+        
+        System.out.println("OptiBest: mbest700 performance settings applied!");
     }
 }
