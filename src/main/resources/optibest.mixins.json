@@ -7,7 +7,7 @@
     "MixinEntityRenderer",
     "MixinNoShadows",
     "MixinLightingProvider",
-    "MixinTextRenderer",
+    "MixinFontRenderer",
     "MixinBlockOcclusion",
     "MixinParticleManager",
     "MixinWorldRenderer",
@@ -18,7 +18,11 @@
     "MixinFastLightmap",
     "MixinNoNarrator",
     "MixinSmartEntity",
-    "MixinChunkUpdateLimit"
+    "MixinChunkUpdateLimit",
+    "MixinFrustum",
+    "MixinFastMath",
+    "MixinSkyPerformance",
+    "MixinAutoOptimizer"
   ],
   "injectors": { "defaultRequire": 1 }
 }
