@@ -42,7 +42,11 @@
     "MixinFastNetworking",
     "MixinNoSignLag",
     "MixinPlayerCulling",
-    "MixinFastHandshake"
+    "MixinFastHandshake",
+    "MixinFastFaces",
+    "MixinFastChunkRebuild",
+    "MixinFastVertex",
+    "MixinFastMathAdvanced"
   ],
   "injectors": { "defaultRequire": 1 }
 }
