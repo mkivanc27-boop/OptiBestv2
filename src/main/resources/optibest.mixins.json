@@ -29,7 +29,15 @@
     "MixinNoDeadRender",
     "MixinNoMenuBackground",
     "MixinUltraCulling",
-    "MixinNoLightLag"
+    "MixinNoLightLag",
+    "MixinFastTick",
+    "MixinUltraParticles",
+    "MixinRamPurge",
+    "MixinFastModels",
+    "MixinNoWeatherLag",
+    "MixinChunkUnload"
   ],
-  "injectors": { "defaultRequire": 1 }
+  "injectors": {
+    "defaultRequire": 1
+  }
 }
