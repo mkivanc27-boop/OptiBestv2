@@ -12,7 +12,11 @@
     "MixinParticleManager",
     "MixinWorldRenderer",
     "MixinInGameHud",
-    "MixinChunkBuilder"
+    "MixinChunkBuilder",
+    "MixinMinecraftClient",
+    "MixinBlockEntityRender",
+    "MixinFastLightmap",
+    "MixinNoNarrator"
   ],
   "injectors": { "defaultRequire": 1 }
 }
