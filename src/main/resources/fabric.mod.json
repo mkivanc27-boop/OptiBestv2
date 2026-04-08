@@ -1,19 +1,27 @@
 {
   "schemaVersion": 1,
   "id": "optibest",
-  "version": "1.0.0",
-  "name": "OptiBest",
-  "description": "Ultra Performance Mod by mbest700",
-  "authors": ["mbest700"],
-  "icon": "assets/optibest/optibest.png",
-  "environment": "client",
-  "entrypoints": {
-    "client": [ "com.optibest.OptiBest" ],
-    "modmenu": [ "com.optibest.integration.ModMenuEntry" ]
+  "version": "2.0.0",
+  "name": "OptiBest: mbest700 Edition",
+  "icon": "assets/optibest/optibest.png", 
+  "authors": [
+    "mbest700"
+  ],
+  "contact": {
+    "homepage": "https://github.com/mbest700/OptiBest"
   },
-  "mixins": [ "optibest.mixins.json" ],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.optibest.OptiBest"
+    ]
+  },
+  "mixins": [
+    "optibest.mixins.json"
+  ],
   "depends": {
-    "fabricloader": ">=0.16.10",
-    "minecraft": "1.21.4"
+    "fabricloader": ">=0.15.0",
+    "minecraft": ">=1.21.4"
   }
 }
