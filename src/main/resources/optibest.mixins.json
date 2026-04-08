@@ -12,7 +12,6 @@
     "MixinParticleManager",
     "MixinWorldRenderer",
     "MixinInGameHud",
-    "MixinMinecraftClient",
     "MixinBlockEntityRender",
     "MixinFastLightmap",
     "MixinNoNarrator",
@@ -38,8 +37,7 @@
     "MixinNoSpawnLag",
     "MixinNoBackgroundTasks",
     "MixinFastNetworking",
-    "MixinNoSignLag",
-    "MixinFastMathAdvanced"
+    "MixinNoSignLag"
   ],
   "injectors": {
     "defaultRequire": 1
