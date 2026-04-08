@@ -1,18 +1,19 @@
 package com.optibest.mixin;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.Direction;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
-import net.minecraft.block.Block;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Block.class)
 public class MixinBlockOcclusion {
-    /** @author mbest700 */
-    @Overwrite
-    public static boolean shouldSideBeRendered(BlockState state, BlockState adjacentState, Direction side) {
-        // Görünmeyen blok yüzeylerini ekran kartına göndermez, VRAM kullanımını düşürür
-        return state != adjacentState;
+    @Inject(method = "shouldSideBeRendered", at = @At("HEAD"), cancellable = true)
+    private static void onShouldSideBeRendered(BlockState state, BlockState adjacentState, Direction side, CallbackInfoReturnable<Boolean> cir) {
+        if (state == adjacentState) {
+            cir.setReturnValue(false);
+        }
     }
 }
-
