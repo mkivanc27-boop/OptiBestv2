@@ -23,7 +23,13 @@
     "MixinAutoOptimizer",
     "MixinFastFluids",
     "MixinMemoryLeakFix",
-    "MixinTextureDiyet"
+    "MixinTextureDiyet",
+    "MixinCappedParticles",
+    "MixinFastLightCheck",
+    "MixinNoDeadRender",
+    "MixinNoMenuBackground"
   ],
-  "injectors": { "defaultRequire": 1 }
+  "injectors": {
+    "defaultRequire": 1
+  }
 }
