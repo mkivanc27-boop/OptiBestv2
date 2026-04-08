@@ -2,7 +2,8 @@ package com.optibest.mixin;
 
 import net.minecraft.client.option.GameOptions;
 import net.minecraft.client.option.CloudRenderMode;
-import net.minecraft.client.option.ParticlesMode;
+import net.minecraft.client.option.ParticlesMode; // Bu satırı SİL, hata veren bu
+import net.minecraft.client.option.ParticleStatus; // Yerine bunu yaz
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -15,10 +16,10 @@ public class MixinAutoOptimizer {
         GameOptions options = (GameOptions) (Object) this;
 
         options.getCloudRenderMode().setValue(CloudRenderMode.OFF);
-        options.getParticles().setValue(ParticlesMode.MINIMAL);
-        options.getAo().setValue(false); // 1.21.4'te boolean oldu
+        options.getParticles().setValue(ParticleStatus.MINIMAL); // ParticleStatus olarak güncellendi
+        options.getAo().setValue(false);
         options.getViewDistance().setValue(2);
-        options.getEntityDistanceScaling().setValue(0.5); // Double istiyordu, düzelttim
+        options.getEntityDistanceScaling().setValue(0.5);
         options.getMipmapLevels().setValue(0);
     }
 }
