@@ -12,4 +12,3 @@ public class MixinFontRenderer {
         return false;
     }
 }
-
