@@ -16,7 +16,9 @@
     "MixinMinecraftClient",
     "MixinBlockEntityRender",
     "MixinFastLightmap",
-    "MixinNoNarrator"
+    "MixinNoNarrator",
+    "MixinSmartEntity",
+    "MixinChunkUpdateLimit"
   ],
   "injectors": { "defaultRequire": 1 }
 }
