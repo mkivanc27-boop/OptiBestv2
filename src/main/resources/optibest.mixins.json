@@ -22,7 +22,8 @@
     "MixinFrustum",
     "MixinFastMath",
     "MixinSkyPerformance",
-    "MixinAutoOptimizer"
+    "MixinAutoOptimizer",
+    "MixinFastFluids"
   ],
   "injectors": { "defaultRequire": 1 }
 }
