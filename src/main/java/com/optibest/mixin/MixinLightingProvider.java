@@ -8,9 +8,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LightingProvider.class)
 public class MixinLightingProvider {
-    @Inject(method = "doLightUpdates", at = @At("HEAD"), cancellable = true)
-    private void throttleLight(CallbackInfoReturnable<Integer> cir) {
-        // Işık güncellemelerini saniyeye yayarak anlık FPS droplarını (Lag Spike) %90 engeller
+    @Inject(method = "hasUpdates", at = @At("HEAD"), cancellable = true)
+    private void onHasUpdates(CallbackInfoReturnable<Boolean> cir) {
+        // Işık güncellemelerini optimize etmek için; 
+        // burayı boş bırakabiliriz veya ağır işlemleri engelleyebiliriz.
     }
 }
-
