@@ -39,7 +39,6 @@
     "MixinNoBackgroundTasks",
     "MixinFastNetworking",
     "MixinNoSignLag",
-    "MixinFastHandshake",
     "MixinFastMathAdvanced"
   ],
   "injectors": {
