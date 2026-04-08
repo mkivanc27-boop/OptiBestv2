@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.optibest.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "MixinEntityRenderer",
+    "MixinLightingProvider",
+    "MixinNoShadows",
+    "MixinBlockOcclusion",
+    "MixinFastFont"
+  ],
+  "injectors": { "defaultRequire": 1 }
+}
+
