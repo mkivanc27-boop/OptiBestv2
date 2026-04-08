@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "optibest",
+  "version": "1.0.0",
+  "name": "OptiBest",
+  "description": "Ultra Performance Mod by mbest700",
+  "authors": ["mbest700"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [ "com.optibest.OptiBest" ],
+    "modmenu": [ "com.optibest.integration.ModMenuEntry" ]
+  },
+  "mixins": [ "optibest.mixins.json" ],
+  "depends": {
+    "fabricloader": ">=0.16.10",
+    "minecraft": "1.21.4",
+    "fabric-api": "*"
+  }
+}
+
