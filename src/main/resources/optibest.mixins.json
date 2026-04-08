@@ -5,11 +5,14 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "MixinEntityRenderer",
-    "MixinLightingProvider",
     "MixinNoShadows",
+    "MixinLightingProvider",
+    "MixinTextRenderer",
     "MixinBlockOcclusion",
-    "MixinFastFont"
+    "MixinParticleManager",
+    "MixinWorldRenderer",
+    "MixinInGameHud",
+    "MixinChunkBuilder"
   ],
   "injectors": { "defaultRequire": 1 }
 }
-
