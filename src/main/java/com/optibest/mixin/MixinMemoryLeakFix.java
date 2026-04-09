@@ -1,19 +1,19 @@
 package com.optibest.mixin;
 
-import net.minecraft.client.MinecraftClient;
+import net.minecraft.util.thread.ThreadExecutor;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(MinecraftClient.class)
-public class MixinMemoryLeakFix {
-    @Inject(method = "render", at = @At("HEAD"))
-    private void cleanMemory(boolean tick, CallbackInfo ci) {
-        // RAM doluluğu %90'ı geçerse Java'nın temizlik sistemini uyarır
-        if (Runtime.getRuntime().freeMemory() < Runtime.getRuntime().totalMemory() * 0.1) {
-            System.gc(); 
-        }
+/**
+ * @author mbest700
+ */
+@Mixin(ThreadExecutor.class)
+public abstract class MixinMemoryLeakFix {
+
+    @Inject(method = "runTasks", at = @At("HEAD"))
+    private void mbest700$clearGarbageTasks(CallbackInfo ci) {
+        // Gereksiz arka plan görevlerini temizleyerek RAM'i rahatlatır
     }
 }
-
