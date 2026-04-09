@@ -7,7 +7,7 @@ import net.minecraft.text.Text;
 
 public class OptiBestConfigScreen extends Screen {
     public OptiBestConfigScreen() {
-        super(Text.literal("OptiBest Ayarları"));
+        super(Text.literal("OptiBest Settings"));
     }
 
     @Override
