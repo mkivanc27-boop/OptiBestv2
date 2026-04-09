@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
  * @author mbest700
  */
 @Mixin(BackgroundRenderer.class)
-public class MixinFogSpeed {
+public class MixinExtremeFog {
 
     @Inject(method = "applyFog", at = @At("RETURN"))
     private static void mbest700$dynamicFogSpeed(Camera camera, BackgroundRenderer.FogType fogType, float viewDistance, boolean thickFog, float tickDelta, CallbackInfo ci) {
