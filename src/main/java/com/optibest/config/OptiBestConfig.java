@@ -1,7 +1,6 @@
-package com.optibest.config;
+package com.optibest;
 
 public class OptiBestConfig {
-    public static boolean aggressiveCulling = true;
-    public static boolean fastLight = true;
+    public static boolean extremeCulling = false;
+    public static int renderDistanceLimit = 10; // Varsayılan 10 blok
 }
-
