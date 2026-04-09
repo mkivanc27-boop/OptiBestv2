@@ -1,13 +1,13 @@
 package com.optibest.config;
 
-import com.optibest.OptiBestConfig; // Doğru paket yolu
+import com.optibest.OptiBestConfig;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.text.Text;
 
 public class OptiBestConfigScreen extends Screen {
-    protected OptiBestConfigScreen(Text title) {
-        super(title);
+    public OptiBestConfigScreen() {
+        super(Text.literal("OptiBest Ayarları"));
     }
 
     @Override
