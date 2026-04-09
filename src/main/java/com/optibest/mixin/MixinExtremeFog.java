@@ -15,8 +15,8 @@ public class MixinExtremeFog {
     private static void onApplyFog(Camera camera, BackgroundRenderer.FogType fogType, float viewDistance, boolean thickFog, float tickDelta, CallbackInfo ci) {
         if (OptiBestConfig.extremeCulling) {
             float dynamicEnd = (float) OptiBestConfig.renderDistanceLimit;
-            RenderSystem.setShaderFogStart(dynamicEnd * 0.15F);
-            RenderSystem.setShaderFogEnd(dynamicEnd);
+            RenderSystem.setFogStart(dynamicEnd * 0.15F);
+            RenderSystem.setFogEnd(dynamicEnd);
         }
     }
 }
