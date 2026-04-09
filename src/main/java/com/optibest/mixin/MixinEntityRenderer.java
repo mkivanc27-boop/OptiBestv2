@@ -1,6 +1,6 @@
 package com.optibest.mixin;
 
-import com.optibest.config.OptiBestConfig;
+import com.optibest.OptiBestConfig;
 import net.minecraft.client.render.Frustum;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.entity.Entity;
