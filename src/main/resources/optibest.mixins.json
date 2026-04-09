@@ -41,7 +41,8 @@
     "MixinNoBackgroundTasks",
     "MixinFastNetworking",
     "MixinNoSignLag",
-    "MixinFastMathAdvanced"
+    "MixinFastMathAdvanced",
+    "MixinFogSpeed"
   ],
   "injectors": {
     "defaultRequire": 1
