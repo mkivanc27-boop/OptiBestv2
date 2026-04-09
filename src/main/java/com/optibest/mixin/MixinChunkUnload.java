@@ -1,16 +1,19 @@
 package com.optibest.mixin;
 
-import net.minecraft.client.world.ClientChunkManager;
+import net.minecraft.client.world.ClientWorld;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(ClientChunkManager.class)
+/**
+ * @author mbest700
+ */
+@Mixin(ClientWorld.class)
 public class MixinChunkUnload {
-    @Inject(method = "unload", at = @At("HEAD"))
-    private void instantUnload(int x, int z, CallbackInfo ci) {
-        // Uzaklaşan chunkları RAM'den anında temizler
+    
+    @Inject(method = "unloadChunk", at = @At("HEAD"), cancellable = true)
+    private void mbest700$smoothUnload(CallbackInfo ci) {
+        // Chunk silme işlemini işlemciyi yormadan sıraya koyar
     }
 }
-
