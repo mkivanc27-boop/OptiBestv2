@@ -13,21 +13,21 @@ public class OptiBestModMenu implements ModMenuApi {
         return parent -> {
             ConfigBuilder builder = ConfigBuilder.create()
                 .setParentScreen(parent)
-                .setTitle(Text.of("OptiBest mbest700 Settings"));
+                .setTitle(Text.of("OptiBest mbest700 Ayarları"));
 
-            ConfigCategory general = builder.getOrCreateCategory(Text.of("Performance"));
+            ConfigCategory general = builder.getOrCreateCategory(Text.of("Performans"));
             ConfigEntryBuilder entryBuilder = builder.entryBuilder();
 
-            // ON/OFF Düğmesi
-            general.addEntry(entryBuilder.startBooleanToggle(Text.of("Extreme Culling"), OptiBestConfig.extremeCulling)
+            // SİS AÇ/KAPAT
+            general.addEntry(entryBuilder.startBooleanToggle(Text.of("Extreme Culling (Sis)"), OptiBestConfig.extremeCulling)
                 .setDefaultValue(false)
                 .setSaveConsumer(newValue -> OptiBestConfig.extremeCulling = newValue)
                 .build());
 
-            // İŞTE O TEXTBAR (Sayı Girişi)
-            general.addEntry(entryBuilder.startIntField(Text.of("Render Limit (Blocks)"), OptiBestConfig.renderDistanceLimit)
+            // MESAFE TEXTBAR (Sayı Girişi)
+            general.addEntry(entryBuilder.startIntField(Text.of("Görüş Mesafesi (Blok)"), OptiBestConfig.renderDistanceLimit)
                 .setDefaultValue(10)
-                .setTooltip(Text.of("Kaç blok ötesi gizlensin? (Örn: 5, 10, 20)"))
+                .setTooltip(Text.of("Sis kaç blok ötede başlasın?"))
                 .setSaveConsumer(newValue -> OptiBestConfig.renderDistanceLimit = newValue)
                 .build());
 
@@ -35,4 +35,3 @@ public class OptiBestModMenu implements ModMenuApi {
         };
     }
 }
-
