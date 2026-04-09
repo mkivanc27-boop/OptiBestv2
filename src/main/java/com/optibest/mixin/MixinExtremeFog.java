@@ -10,28 +10,24 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+/**
+ * @author mbest700
+ */
 @Mixin(BackgroundRenderer.class)
-public class MixinExtremeFog {
+public class MixinFogSpeed {
 
     @Inject(method = "applyFog", at = @At("RETURN"))
-    private static void mbest700$animatedDynamicFog(Camera camera, BackgroundRenderer.FogType fogType, float viewDistance, boolean thickFog, float tickDelta, CallbackInfo ci) {
+    private static void mbest700$dynamicFogSpeed(Camera camera, BackgroundRenderer.FogType fogType, float viewDistance, boolean thickFog, float tickDelta, CallbackInfo ci) {
         if (OptiBestConfig.extremeCulling) {
-            long time = System.currentTimeMillis();
-            
-            // Animasyon matematiği: Sis her 3 saniyede bir hafifçe "nefes alır"
-            // Math.sin ile yumuşak bir gidiş-dönüş yapıyoruz
-            float animationOffset = MathHelper.sin((float) (time % 3000L) / 3000.0F * (float)Math.PI * 2.0F) * 1.5F;
+            // Hatanın olduğu yer burasıydı, artık bir metodun içinde:
+            double velocity = camera.getFocusedEntity().getVelocity().horizontalLength();
+            float speedFactor = (float) (velocity * 2.5); 
             
             float baseLimit = (float) OptiBestConfig.renderDistanceLimit;
-            float dynamicEnd = baseLimit + animationOffset; // Sis sınırı hafif oynar
-            float dynamicStart = dynamicEnd * 0.15F; // Başlangıç her zaman bitişe oranlı
+            float finalLimit = baseLimit + speedFactor;
 
-            RenderSystem.setShaderFogStart(dynamicStart);
-            RenderSystem.setShaderFogEnd(dynamicEnd);
-            
-            // Sis rengini biraz daha derinleştirelim (Opsiyonel)
-            // RenderSystem.setShaderFogColor(0.1F, 0.1F, 0.1F); 
+            RenderSystem.setShaderFogStart(finalLimit * 0.1F);
+            RenderSystem.setShaderFogEnd(finalLimit);
         }
     }
 }
-
